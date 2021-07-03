@@ -116,7 +116,6 @@ function receiveMessage(msg) {
     //dnd is split on d
     
     if (msg.content.length >= 6) {
-        
         var something = msg.content.split('d');
         if (something.length == 2) {
             if (parseInt(something[1])) {
@@ -130,7 +129,7 @@ function receiveMessage(msg) {
             msg.reply(toString(answer));
             
         } 
-        else  {
+        else if (something.startsWith('/rolld'))  {
             // /roll d 20 d ad
             // /roll d 20 d adv
             var len = something.length - 2;
